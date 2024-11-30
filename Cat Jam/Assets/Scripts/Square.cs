@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Square : MonoBehaviour
 {
-    public DialougeAsset dialouge;
+    public DialougeAsset dialougeAsset;
+    public DialougeControl control;
 
     // Start is called before the first frame update
     void Start()
     {
-        DialougeControl dialougeControl = gameObject.AddComponent<DialougeControl>();
-        dialougeControl.ShowDialouge("Bean");
+        control.ShowDialouge(dialougeAsset.dialouge[0]);
     }
 
     // Update is called once per frame
