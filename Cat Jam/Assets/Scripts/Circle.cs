@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngineInternal;
 
 public class Circle : MonoBehaviour
 {
@@ -25,8 +22,9 @@ public class Circle : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
-    
+
 }
