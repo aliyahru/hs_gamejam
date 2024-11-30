@@ -29,7 +29,6 @@ public class DialougeControl : MonoBehaviour
             dialougeText.text = textBuffer;
             yield return new WaitForSeconds(1 / charPerSec);
         }
-        Debug.Log(textBuffer);
     }
 
     public void EndDialouge()
