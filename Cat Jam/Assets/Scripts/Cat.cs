@@ -21,7 +21,7 @@ public class Cat : MonoBehaviour
 
     Vector2 stopped;
 
-    private Animator cAnimator;
+    [SerializeField] Animator cAnimator;
 
 
     void Start()
@@ -39,11 +39,14 @@ public class Cat : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        cAnimator.SetFloat("Horizontal", horizontal);
+        cAnimator.SetFloat("Vertical", vertical);
+
         // if (Raytest()) {
         //     UnityEngine.Debug.Log("O");
         //     // UnityEngine.Debug.Log("raytest");
         // }
-        UnityEngine.Debug.DrawRay(transform.position, lastDir * 2f, Color.white, 0);
         if (Input.GetKeyDown("space")) {
             UnityEngine.Debug.Log("space");
             if (Raytest()) {
@@ -89,7 +92,6 @@ public class Cat : MonoBehaviour
     public Boolean Raytest() {
         float raydist = 2f;
         RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, raydist, LayerMask.GetMask("Interactable"));
-        UnityEngine.Debug.DrawRay(transform.position, lastDir * raydist, Color.white, 0);
 
         if (foundHit.collider != null) {
             // UnityEngine.Debug.Log(body.velocity);
