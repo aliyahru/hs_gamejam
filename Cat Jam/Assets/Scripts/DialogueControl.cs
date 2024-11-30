@@ -7,12 +7,12 @@ using UnityEngine;
 public class DialougeControl : MonoBehaviour 
 {
     [SerializeField] TextMeshProUGUI dialougeText;
+    //[SerializeField] TextMeshProUGUI dialougeText;
     //[SerializeField] TextMeshProUGUI nameText;
     [SerializeField] GameObject dialougePanel;
 
-    public void ShowDialouge(string dialouge)
+    public void ShowDialouge(string? dialouge)
     {
-        Debug.Log(dialouge);
         //nameText.text = name + "...";
         dialougeText.text = dialouge;
         dialougePanel.SetActive(true);

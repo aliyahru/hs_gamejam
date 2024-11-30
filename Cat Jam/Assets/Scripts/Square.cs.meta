@@ -3,7 +3,9 @@ guid: f5f219797678ccd46b39b3b5a95209b6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dialougeAsset: {fileID: 11400000, guid: 1f1755de746efd54185253a9e654a42c, type: 2}
+  - control: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

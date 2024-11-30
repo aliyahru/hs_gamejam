@@ -6,5 +6,6 @@ using UnityEngine;
 public class DialougeAsset : ScriptableObject
 {
     [TextArea]
-    public string dialouge;
+    public string character;
+    public string[] dialouge;
 }
