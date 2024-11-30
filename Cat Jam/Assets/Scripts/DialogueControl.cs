@@ -11,7 +11,7 @@ public class DialougeControl : MonoBehaviour
     //[SerializeField] TextMeshProUGUI nameText;
     [SerializeField] GameObject dialougePanel;
 
-    public void ShowDialouge(string dialouge)
+    public void ShowDialouge(string? dialouge)
     {
         //nameText.text = name + "...";
         dialougeText.text = dialouge;
