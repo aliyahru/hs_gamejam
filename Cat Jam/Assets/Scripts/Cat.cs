@@ -58,19 +58,15 @@ public class Cat : MonoBehaviour
             if (body.velocity != stopped) {
                 if (body.velocity[0] > 0) {
                     cAnimator.SetTrigger("WalkR");
-                    UnityEngine.Debug.Log("Walkin");
                 }
                 else if (body.velocity[0] < 0) {
                     cAnimator.SetTrigger("WalkL");
-                    UnityEngine.Debug.Log("Walkin");
                 }
                 else if (body.velocity[1] > 0) {
                     cAnimator.SetTrigger("WalkU");
-                    UnityEngine.Debug.Log("Walkin");
                 }
                 else if (body.velocity[1] < 0) {
                     cAnimator.SetTrigger("WalkD");
-                    UnityEngine.Debug.Log("Walkin");
                 }
             }
         }
