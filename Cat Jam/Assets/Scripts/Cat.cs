@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 using UnityEngineInternal;
 
-public class Circle : MonoBehaviour
+public class Cat : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D body;
@@ -20,12 +21,16 @@ public class Circle : MonoBehaviour
 
     Vector2 stopped;
 
+    private Animator cAnimator;
+
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         lastDir = new Vector2(0, 0);
         stopped = new Vector2(0, 0);
+
+        cAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,6 +50,29 @@ public class Circle : MonoBehaviour
                 UnityEngine.Debug.Log("helllo i am the spirit");
             }
         }
+
+        if (cAnimator != null) {
+            if (body.velocity != stopped) {
+                if (body.velocity[0] > 0) {
+                    cAnimator.SetTrigger("WalkR");
+                    UnityEngine.Debug.Log("Walkin");
+                }
+                else if (body.velocity[0] < 0) {
+                    cAnimator.SetTrigger("WalkL");
+                    UnityEngine.Debug.Log("Walkin");
+                }
+                else if (body.velocity[1] > 0) {
+                    cAnimator.SetTrigger("WalkU");
+                    UnityEngine.Debug.Log("Walkin");
+                }
+                else if (body.velocity[1] < 0) {
+                    cAnimator.SetTrigger("WalkD");
+                    UnityEngine.Debug.Log("Walkin");
+                }
+            }
+        }
+
+
         
     }
 
