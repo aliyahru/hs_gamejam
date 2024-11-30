@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 027146a1b5683674dbd0bfa1f58664ef
+guid: 6672eba212099664e971bdcd93e57f07
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638685829526733959
+  platformSettingsDirtyTick: 638685830328510024
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: carpet1
+  - name: carpet4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: a67c26cea81116048bcf301ab388321d
+    spriteID: 8960a82a6099247489e85536a81072df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,13 +144,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -318304320
-    name: carpet1
+    guid: -318302335
+    name: carpet4
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: carpet1
+    - name: carpet4
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -158,7 +158,7 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 16
-      spriteId: a67c26cea81116048bcf301ab388321d
+      spriteId: 8960a82a6099247489e85536a81072df
     linkedCells: []
     parentIndex: -1
   platformSettings:
