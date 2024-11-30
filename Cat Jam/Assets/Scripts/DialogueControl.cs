@@ -9,12 +9,8 @@ public class DialougeControl : MonoBehaviour
     //[SerializeField] TextMeshProUGUI nameText;
     [SerializeField] GameObject dialougePanel;
 
-<<<<<<< Updated upstream
-    public void ShowDialouge(string? dialouge)
-=======
     float charPerSec = 10;
     public void ShowDialouge(string dialouge)
->>>>>>> Stashed changes
     {
         string textBuffer = null;
 
