@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a53921f8e4ff04aa78fafb20cc4faf, type: 3}
   m_Name: DialougeTest
   m_EditorClassIdentifier: 
-  name: Ghost
+  character: Ghost
   dialouge:
   - BEANS
