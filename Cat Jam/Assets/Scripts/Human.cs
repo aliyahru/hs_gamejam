@@ -9,6 +9,9 @@ public class HUman : MonoBehaviour
 {
     // Start is called before the first frame update
     Collider2D effect_area;
+    public DialougeAsset dialougeAsset;
+    public DialougeControl control;
+
     void Start()
     {
         effect_area = GetComponent<Collider2D>();
@@ -31,6 +34,7 @@ public class HUman : MonoBehaviour
     {
         UnityEngine.Debug.Log("hold on...");
         if (collider.gameObject.tag == "Cat") {
+            control.ShowDialouge(7);
             UnityEngine.Debug.Log("you faill");
         }
     }
