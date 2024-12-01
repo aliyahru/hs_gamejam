@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class RedButton : MonoBehaviour
 {
+    public DialougeAsset dialougeAsset;
+    public DialougeControl control;
+    bool button = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +18,10 @@ public class RedButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("r") && button == true)
+        {
+            control.EndDialouge();
+        }
     }
 
     public Boolean OnPress(GameObject pressObject) {
@@ -22,7 +29,8 @@ public class RedButton : MonoBehaviour
             UnityEngine.Debug.Log("Object is too light!");
             return false;
         } else {
-            UnityEngine.Debug.Log("Wow! stupid fffuckin cat");
+            control.ShowDialouge(6);
+            button = true;
             return true;
         }
     }
