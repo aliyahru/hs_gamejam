@@ -12,6 +12,7 @@ public class HUman : MonoBehaviour
     Collider2D effect_area;
     public DialougeAsset dialougeAsset;
     public DialougeControl control;
+    bool cautght = false;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class HUman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("r") && cautght == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         // List<Collider2D> results = new List<Collider2D>();
         // ContactFilter2D filter = new ContactFilter2D();
         // LayerMask Mask = LayerMask.GetMask("Cat");
@@ -36,10 +41,7 @@ public class HUman : MonoBehaviour
         UnityEngine.Debug.Log("hold on...");
         if (collider.gameObject.tag == "Cat") {
             control.ShowDialouge(7);
-            if (Input.GetKeyDown("r"))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            cautght = true;
             UnityEngine.Debug.Log("you faill");
         }
     }
