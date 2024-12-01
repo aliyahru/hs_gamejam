@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6273247406161877302, guid: ed85da518a1f1d948949e8166aa20f4f, type: 3}
+      propertyPath: mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3281,6 +3285,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRedButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4863400079445512407, guid: 6ecf3c035382e5349b4d204adb48abe1, type: 3}
+      propertyPath: control
+      value: 
+      objectReference: {fileID: 1510263942}
+    - target: {fileID: 4863400079445512407, guid: 6ecf3c035382e5349b4d204adb48abe1, type: 3}
+      propertyPath: dialougeAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f1755de746efd54185253a9e654a42c, type: 2}
     - target: {fileID: 8071834247092158517, guid: 6ecf3c035382e5349b4d204adb48abe1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23
