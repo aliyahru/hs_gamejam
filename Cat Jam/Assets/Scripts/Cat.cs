@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using UnityEditor;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -23,13 +24,14 @@ public class Cat : MonoBehaviour
 
     [SerializeField] Animator cAnimator;
 
+    public GameObject currentlyHolding;
+
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         lastDir = new Vector2(0, 0);
         stopped = new Vector2(0, 0);
-
         cAnimator = GetComponent<Animator>();
     }
 
@@ -54,6 +56,19 @@ public class Cat : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown("return")) {
+            UnityEngine.Debug.Log("helllo i am the spirit");
+            
+
+            if (currentlyHolding != null) {
+                currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = null;
+                currentlyHolding = null;
+            } else {
+                objectPickup();
+            }
+        }
+
         if (cAnimator != null) {
             if (body.velocity != stopped) {
                 if (body.velocity[0] > 0) {
@@ -69,10 +84,7 @@ public class Cat : MonoBehaviour
                     cAnimator.SetTrigger("WalkD");
                 }
             }
-        }
-
-
-        
+        }        
     }
 
     private void FixedUpdate() {
@@ -98,4 +110,23 @@ public class Cat : MonoBehaviour
         }
         return false;
     }
+
+    public void objectPickup() {
+        float raydist = 2f;
+        RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, raydist, LayerMask.GetMask("Interactable"));
+
+        if (foundHit.collider != null) {
+            UnityEngine.Debug.Log(body.velocity);
+            if (foundHit.collider.gameObject.tag == "Object") {
+                // UnityEngine.Debug.Log("hellooo i am the spirit");
+                UnityEngine.Debug.Log(foundHit.collider.gameObject);
+                currentlyHolding = foundHit.collider.gameObject;
+                currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
+                // currentlyHolding.objectAttach(this);
+
+            }
+        }
+    }
+
 }
