@@ -3,22 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Spirit
-<<<<<<< Updated upstream
-=======
-  - Object
-  - Button
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Interactable
+  - 
   - Water
   - UI
-  - Door
-  - Button
+  - 
+  - 
   - 
   - 
   - 
@@ -44,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Floor
-    uniqueID: 549960395
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ghost
-    uniqueID: 3765602891
     locked: 0

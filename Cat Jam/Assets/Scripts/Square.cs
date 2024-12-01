@@ -16,7 +16,7 @@ public class Square : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            control.ShowDialouge(0);
+            //control.ShowDialouge(0);
         }
     }
 }

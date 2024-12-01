@@ -9,10 +9,10 @@ public class DialougeControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] GameObject dialougePanel;
 
-    float charPerSec = 10;
+    float charPerSec = 20;
     public void ShowDialouge(int elementNum)
     {
-        string dialouge = dialougeAsset.dialouge[0];
+        string dialouge = dialougeAsset.dialouge[elementNum];
         string textBuffer = null;
 
         StartCoroutine(TypeOut(textBuffer, dialouge));

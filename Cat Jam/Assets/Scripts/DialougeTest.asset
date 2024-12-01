@@ -16,7 +16,9 @@ MonoBehaviour:
   dialouge:
   - Hello cat! This ship is going to crash soon and only you can save it! Quick,
     grab that keycard and leave the room!
-  - Cat! I need your help, this space ship is going to crash if you don't help. The
-    humans can't see me and they'll stop you if you're seen. You need to put something
-    heavy on the big red button in the conrol room on the far side of the ship. Press
-    WASD to move and enter to pick things up. We're all counting on you!
+  - Cat! I need your help, this space ship is going to crash if you don't.
+  - The humans can't see me and they'll stop you if you're seen.
+  - ' You need to put something heavy on the big red button in the conrol room on
+    the far side of the ship. '
+  - 'Press WASD to move and enter to pick things up. '
+  - We're all counting on you!

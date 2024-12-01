@@ -55,11 +55,6 @@ public class Cat : MonoBehaviour
 
 
         if (Input.GetKeyDown("return")) {
-
-
-            UnityEngine.Debug.Log("helllo i am the spirit");
-            
-
             if (currentlyHolding != null) {
                 RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, 2f, LayerMask.GetMask("Button"));
                 if (foundHit.collider != null) {
@@ -129,7 +124,7 @@ public class Cat : MonoBehaviour
         if (foundHit.collider != null) {
             UnityEngine.Debug.Log(body.velocity);
             if (foundHit.collider.gameObject.tag == "Object") {
-                // UnityEngine.Debug.Log("hellooo i am the spirit");
+                UnityEngine.Debug.Log("hellooo i am the spirit");
                 UnityEngine.Debug.Log(foundHit.collider.gameObject);
                 currentlyHolding = foundHit.collider.gameObject;
                 currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
