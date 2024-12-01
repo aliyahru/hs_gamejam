@@ -16,7 +16,6 @@ public class Cat : MonoBehaviour
 
     Vector2 lastDir;
 
-    Boolean isMoving = false;
     public float runSpeed = 20.0f;
 
     Vector2 stopped;
