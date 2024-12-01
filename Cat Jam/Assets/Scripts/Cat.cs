@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using UnityEditor;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -17,21 +16,19 @@ public class Cat : MonoBehaviour
 
     Vector2 lastDir;
 
-    Boolean isMoving = false;
     public float runSpeed = 20.0f;
 
     Vector2 stopped;
 
     [SerializeField] Animator cAnimator;
-
     public GameObject currentlyHolding;
-
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         lastDir = new Vector2(0, 0);
         stopped = new Vector2(0, 0);
+
         cAnimator = GetComponent<Animator>();
     }
 
@@ -56,14 +53,20 @@ public class Cat : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("return")) {
-            UnityEngine.Debug.Log("helllo i am the spirit");
-            
 
+        if (Input.GetKeyDown("return")) {
             if (currentlyHolding != null) {
-                currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = null;
-                currentlyHolding = null;
+                RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, 2f, LayerMask.GetMask("Button"));
+                if (foundHit.collider != null) {
+                    if (foundHit.collider.gameObject.tag == "Button") {
+                        foundHit.collider.gameObject.GetComponent<RedButton>().OnPress(currentlyHolding);
+                    }
+                }
+                else {
+                    currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = null;
+                    currentlyHolding = null;
+                }
             } else {
                 objectPickup();
             }
@@ -84,7 +87,10 @@ public class Cat : MonoBehaviour
                     cAnimator.SetTrigger("WalkD");
                 }
             }
-        }        
+        }
+
+
+        
     }
 
     private void FixedUpdate() {
@@ -118,7 +124,7 @@ public class Cat : MonoBehaviour
         if (foundHit.collider != null) {
             UnityEngine.Debug.Log(body.velocity);
             if (foundHit.collider.gameObject.tag == "Object") {
-                // UnityEngine.Debug.Log("hellooo i am the spirit");
+                UnityEngine.Debug.Log("hellooo i am the spirit");
                 UnityEngine.Debug.Log(foundHit.collider.gameObject);
                 currentlyHolding = foundHit.collider.gameObject;
                 currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
@@ -128,5 +134,4 @@ public class Cat : MonoBehaviour
             }
         }
     }
-
 }

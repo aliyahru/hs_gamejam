@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class DialougeControl : MonoBehaviour
 {
+    public GameObject ghost;
+    public DialougeAsset dialougeAsset;
     [SerializeField] TextMeshProUGUI dialougeText;
-    //[SerializeField] TextMeshProUGUI dialougeText;
-    //[SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] GameObject dialougePanel;
 
-    float charPerSec = 10;
-    public void ShowDialouge(string dialouge)
+    float charPerSec = 20;
+    public void ShowDialouge(int elementNum)
     {
+        string dialouge = dialougeAsset.dialouge[elementNum];
         string textBuffer = null;
 
         StartCoroutine(TypeOut(textBuffer, dialouge));
 
-        //nameText.text = name + "...";
+        nameText.text = dialougeAsset.character + ":";
 
         dialougePanel.SetActive(true);
     }
@@ -33,8 +35,9 @@ public class DialougeControl : MonoBehaviour
 
     public void EndDialouge()
     {
-        //nameText.text = null;
+        nameText.text = null;
         dialougeText.text = null; ;
         dialougePanel.SetActive(false);
+        ghost.SetActive(false);
     }
 }
