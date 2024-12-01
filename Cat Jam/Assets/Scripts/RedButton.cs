@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class RedButton : MonoBehaviour
 {
+    public DialougeAsset dialougeAsset;
+    public DialougeControl control;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class RedButton : MonoBehaviour
             return false;
         } else {
             UnityEngine.Debug.Log("Wow! stupid fffuckin cat");
+            control.ShowDialouge(6);
             return true;
         }
     }
