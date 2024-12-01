@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    [SerializeField] GameObject Player;
     void Start()
     {
         

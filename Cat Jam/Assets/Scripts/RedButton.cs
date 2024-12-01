@@ -18,7 +18,7 @@ public class RedButton : MonoBehaviour
     }
 
     public Boolean OnPress(GameObject pressObject) {
-        if (pressObject.GetComponent<Rigidbody2D>().mass < 5 ) {
+        if (pressObject.GetComponent<ObjectPickup>().getMass() < 5f ) {
             UnityEngine.Debug.Log("Object is too light!");
             return false;
         } else {
