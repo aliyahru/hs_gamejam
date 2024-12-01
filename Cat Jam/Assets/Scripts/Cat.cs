@@ -22,7 +22,7 @@ public class Cat : MonoBehaviour
     Vector2 stopped;
 
     [SerializeField] Animator cAnimator;
-
+    public GameObject currentlyHolding;
 
     void Start()
     {
@@ -54,8 +54,7 @@ public class Cat : MonoBehaviour
             }
         }
 
-<<<<<<< Updated upstream
-=======
+
         if (Input.GetKeyDown("return")) {
 
 
@@ -79,7 +78,6 @@ public class Cat : MonoBehaviour
             }
         }
 
->>>>>>> Stashed changes
         if (cAnimator != null) {
             if (body.velocity != stopped) {
                 if (body.velocity[0] > 0) {
@@ -124,14 +122,10 @@ public class Cat : MonoBehaviour
         }
         return false;
     }
-<<<<<<< Updated upstream
-=======
 
     public void objectPickup() {
         float raydist = 2f;
         RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, raydist, LayerMask.GetMask("Interactable"));
-
-
 
         if (foundHit.collider != null) {
             UnityEngine.Debug.Log(body.velocity);
@@ -146,6 +140,4 @@ public class Cat : MonoBehaviour
             }
         }
     }
-
->>>>>>> Stashed changes
 }
