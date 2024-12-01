@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Cat Jam",
+    "\\Cat Jam\\Assets",
     "\\Cat Jam\\Assets\\Settings"
   ],
-  "SelectedNode": "\\Cat Jam",
+  "SelectedNode": "\\Cat Jam\\Assets\\Settings\\Lit2DSceneTemplate.scenetemplate",
   "PreviewInSolutionExplorer": false
 }
