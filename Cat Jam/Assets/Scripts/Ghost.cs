@@ -20,6 +20,7 @@ public class Ghost : MonoBehaviour
         if (Input.GetKeyDown("r") && diaNum <= 5)
         {
             control.ShowDialouge(diaNum);
+
             diaNum++;
         }
         else if (Input.GetKeyDown("r") && diaNum > 5)

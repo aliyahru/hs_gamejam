@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialougeControl : MonoBehaviour
 {
+    public GameObject ghost;
     public DialougeAsset dialougeAsset;
     [SerializeField] TextMeshProUGUI dialougeText;
     [SerializeField] TextMeshProUGUI nameText;
@@ -37,5 +38,6 @@ public class DialougeControl : MonoBehaviour
         nameText.text = null;
         dialougeText.text = null; ;
         dialougePanel.SetActive(false);
+        ghost.SetActive(false);
     }
 }
