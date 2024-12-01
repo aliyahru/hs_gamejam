@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUman : MonoBehaviour
@@ -35,6 +36,10 @@ public class HUman : MonoBehaviour
         UnityEngine.Debug.Log("hold on...");
         if (collider.gameObject.tag == "Cat") {
             control.ShowDialouge(7);
+            if (Input.GetKeyDown("r"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
             UnityEngine.Debug.Log("you faill");
         }
     }
