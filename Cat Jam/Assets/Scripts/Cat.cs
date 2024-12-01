@@ -54,6 +54,32 @@ public class Cat : MonoBehaviour
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        if (Input.GetKeyDown("return")) {
+
+
+            UnityEngine.Debug.Log("helllo i am the spirit");
+            
+
+            if (currentlyHolding != null) {
+                RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, 2f, LayerMask.GetMask("Button"));
+                if (foundHit.collider != null) {
+                    if (foundHit.collider.gameObject.tag == "Button") {
+                        foundHit.collider.gameObject.GetComponent<RedButton>().OnPress(currentlyHolding);
+                    }
+                }
+                else {
+                    currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = null;
+                    currentlyHolding = null;
+                }
+            } else {
+                objectPickup();
+            }
+        }
+
+>>>>>>> Stashed changes
         if (cAnimator != null) {
             if (body.velocity != stopped) {
                 if (body.velocity[0] > 0) {
@@ -98,4 +124,28 @@ public class Cat : MonoBehaviour
         }
         return false;
     }
+<<<<<<< Updated upstream
+=======
+
+    public void objectPickup() {
+        float raydist = 2f;
+        RaycastHit2D foundHit = Physics2D.Raycast(transform.position, lastDir, raydist, LayerMask.GetMask("Interactable"));
+
+
+
+        if (foundHit.collider != null) {
+            UnityEngine.Debug.Log(body.velocity);
+            if (foundHit.collider.gameObject.tag == "Object") {
+                // UnityEngine.Debug.Log("hellooo i am the spirit");
+                UnityEngine.Debug.Log(foundHit.collider.gameObject);
+                currentlyHolding = foundHit.collider.gameObject;
+                currentlyHolding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                currentlyHolding.GetComponent<FixedJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
+                // currentlyHolding.objectAttach(this);
+
+            }
+        }
+    }
+
+>>>>>>> Stashed changes
 }

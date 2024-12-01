@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spirit
+<<<<<<< Updated upstream
+=======
+  - Object
+  - Button
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Door
-  - 
+  - Button
   - 
   - 
   - 
